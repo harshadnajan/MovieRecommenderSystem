@@ -29,3 +29,8 @@ if st.button('Recommend'):
     recommendations  = recommend(selected_movie_name)
     for i in recommendations:
         st.write(i)
+
+import gzip
+
+with gzip.open('similarity.pkl.gz','wb') as file:
+    pickle.dump(similarity,file)
